@@ -7,7 +7,7 @@
 
 int main(void)
 {
-	char d;
+	int d;
 
 	d = 48;
 
