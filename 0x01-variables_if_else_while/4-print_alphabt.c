@@ -9,10 +9,22 @@ int main(void)
 {
 	char l;
 
-	for (l = 'a'; l <= 'z'; l++)
+	l = 'a';
+
+	while (l <= 'z')
 	{
 	putchar(l);
+	l++;
+	if (l == 'e')
+	{
+	l++;
 	}
+	else if (l == 'q')
+	{
+	l++;
+	}
+	}
+
 	putchar('\n');
 	return (0);
 }
