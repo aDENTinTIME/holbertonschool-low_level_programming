@@ -16,7 +16,7 @@ int main(void)
 	{
 	putchar(n);
 	putchar(nn);
-	if (n <= '9')
+	if (n < '9' ||  nn < '9')
 	{
 	putchar(44);
 	putchar(32);
