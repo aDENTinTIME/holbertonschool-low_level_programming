@@ -7,17 +7,14 @@
 
 int main(void)
 {
-	int d = 1;
+	int d = 0;
 
-	while (d < 90)
+	while (d < 100)
 	{
-		if ((d % 10) < (d / 10))
-		{
-			d = d + 1 + 1 * (d / 10);
-		}
 		putchar((d / 10) + '0');
 		putchar((d % 10) + '0');
-		if (d < 89)
+		putchar((d % 100) + '0');
+		if (d < 99)
 		{
 			putchar(44);
 			putchar(32);
