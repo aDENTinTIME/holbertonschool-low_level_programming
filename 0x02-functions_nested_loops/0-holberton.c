@@ -1,7 +1,7 @@
 #include "holberton.h"
 
 /**
-* main - Prints "XX"
+* main - Prints "Holberton" and a new line
 * Return: 0
 */
 
