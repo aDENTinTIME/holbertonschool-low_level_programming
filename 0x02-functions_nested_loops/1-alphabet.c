@@ -1,12 +1,18 @@
 #include "holberton.h"
 
 /**
-* main - Prints "XX"
+* main - Prints the alphabet.
 * Return: 0
 */
 
-int main(void)
+void print_alphabet(void)
 {
-	
-	return(0);
+	char letter = 'a';
+
+	while(letter <= 'z')
+	{
+	        _putchar(letter);
+	        letter++;
+	}
+	_putchar('\n');
 }
