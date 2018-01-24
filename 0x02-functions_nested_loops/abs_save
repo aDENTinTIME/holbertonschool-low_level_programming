@@ -1,0 +1,19 @@
+#include "holberton.h"
+
+/**
+* print_sign - Checks if number is positive, negative, or zero.
+* @n: is being passed in.
+* Return: 1, 0, or -1
+*/
+
+int _abs(int n)
+{
+	if (n >= 0)
+	{
+		return (n);
+	}
+	else
+	{
+		return (-(n));
+	}
+}
