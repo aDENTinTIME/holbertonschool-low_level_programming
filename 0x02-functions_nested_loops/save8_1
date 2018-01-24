@@ -6,15 +6,14 @@
 
 void jack_bauer(void)
 {
-	int a, b, c, d, i;
+	int a, b, c, d;
 
 	a = 0;
 	b = 0;
 	c = 0;
 	d = 0;
-	i = 0;
 
-	while (i < 1440)
+	while (b % 10 < 4)
 	{
 		_putchar(a + '0');
 		_putchar(b + '0');
@@ -23,27 +22,23 @@ void jack_bauer(void)
 		_putchar(d + '0');
 		_putchar('\n');
 
-		if (d < 9)
+		if (d <= 9)
 		{
 			d++;
 		}
-		else
+		else if (c == 5 && d == 9)
+		{
+			b++;
+			c = 0;
+			d = 0;
+		}
+		else if 
 		{
 			c++;
 			d = 0;
 		}
 
-		if (c > 5)
-		{
-			b++;
-			c = 0;
-		}
+		a = b % 100 / 10;
 
-		if (b > 9)
-		{
-			a++;
-			b = 0;
-		}
-	i++;
 	}
 }
