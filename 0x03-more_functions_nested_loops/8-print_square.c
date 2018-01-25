@@ -1,7 +1,8 @@
 #include "holberton.h"
 
 /**
-* more_numbers - Prints 0-14, ten times.
+* print_square - Prints a "square" of '#' using input for size.
+* @size: disered size of square.
 */
 
 void print_square(int size)
