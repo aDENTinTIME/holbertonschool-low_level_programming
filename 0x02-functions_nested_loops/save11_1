@@ -1,0 +1,23 @@
+#include "holberton.h"
+
+/**
+* print_to_98 - prints all numbers up from the variable fed.
+* @n: the number fed in.
+*/
+
+void print_to_98(int num)
+{
+	if (num < 99)
+	{
+		_putchar(num);
+
+		while (num < 98)
+		{
+			num ++;
+			_putchar(',');
+			_putchar(' ');
+			_putchar(num + '0');
+		}
+		_putchar('\n');
+	}
+}
