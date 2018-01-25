@@ -1,0 +1,71 @@
+#include "holberton.h"
+
+/**
+* times_table - creates a times table.
+*/
+
+void jack_bauer(void)
+{
+	int z, n, i;
+
+	z = 0;
+	n = 0;
+	i = 0;
+
+	while (i < 10)
+	{
+		while (i < 10)
+		{
+			_putchar(z);
+		}
+
+		while ()
+		{
+			n++;
+			_putchar(n);
+
+			if (n < 10)
+			{
+				_putchar(' ');
+				_putchar(' ');
+				_putchar(',');
+			}
+			else
+			{
+				_putchar(' ');
+				_putchar(',');
+			}
+			
+			n *= 2;
+
+		}
+		_putchar(a + '0');
+		_putchar(',');
+		_putchar(' ');
+		_putchar(' ');
+		_putchar('\n');
+
+		if (d < 9)
+		{
+			d++;
+		}
+		else
+		{
+			c++;
+			d = 0;
+		}
+
+		if (c > 5)
+		{
+			b++;
+			c = 0;
+		}
+
+		if (b > 9)
+		{
+			a++;
+			b = 0;
+		}
+	i++;
+	}
+}
