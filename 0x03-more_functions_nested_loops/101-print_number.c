@@ -11,6 +11,10 @@ void print_number(int n)
 		n *= -1;
 		_putchar ('-');
 	}
+
+	if (n > 9999)
+		_putchar (n % 100000 / 10000 + '0');
+
 	if (n > 999)
 		_putchar (n % 10000 / 1000 + '0');
 
