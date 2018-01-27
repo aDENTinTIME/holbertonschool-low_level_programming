@@ -7,24 +7,24 @@
 
 int main(void)
 {
-	unsigned long a, b, c, i;
+	unsigned a, b, c, i;
 
 	a = 1;
 	b = 2;
 	c = 0;
 
-	printf("%lu, %lu", a, b);
+	printf("%u, %u", a, b);
 
 	for (i = 0; i < 32; i++)
 	{
 		c = a + b;
-		printf(", %lu", c);
+		printf(", %u", c);
 
 		a = b + c;
-		printf(", %lu", a);
+		printf(", %u", a);
 
 		b = c + a;
-		printf(", %lu", b);
+		printf(", %u", b);
 	}
 	putchar('\n');
 
