@@ -4,7 +4,7 @@
 * main - Prints Fibonacci sequence.
 */
 
-void main(void)
+int main(void)
 {
 	unsigned long a, b, c, i;
 
@@ -26,4 +26,6 @@ void main(void)
 		printf(", %lu", b);
 	}
 	putchar('\n');
+
+	return(0);
 }
