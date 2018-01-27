@@ -2,6 +2,7 @@
 
 /**
 * main - Prints Fibonacci sequence.
+* Return: 0
 */
 
 int main(void)
@@ -27,5 +28,5 @@ int main(void)
 	}
 	putchar('\n');
 
-	return(0);
+	return (0);
 }
