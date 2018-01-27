@@ -6,24 +6,24 @@
 
 void main(void)
 {
-	int a, b, c, i;
+	unsigned long a, b, c, i;
 	
 	a = 1;
 	b = 2;
 	c = 0;
 
-	printf("%d, %d", a, b);
+	printf("%lu, %lu", a, b);
 
 	for (i = 0; i < 50; i++)
 	{
 		c = a + b;
-		printf(", %d", c);
+		printf(", %lu", c);
 
 		a = b + c;
-		printf(", %d", a);
+		printf(", %lu", a);
 
 		b = c + a;
-		printf(", %d", b);
+		printf(", %lu", b);
 	}
 	putchar('\n');
 }
