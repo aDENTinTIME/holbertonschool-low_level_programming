@@ -1,11 +1,16 @@
 #include "holberton.h"
 
 /**
-* reset_to_98 - Changes the value at a memory address.
-* @n: memor address passed to function.
+* swap_int - Changes the values at the memory addresses passed it.
+* @a: first memory address passed to function.
+* @b: second memory address passed to function.
 */
 
-void reset_to_98(int *n)
+void swap_int(int *a, int *b)
 {
-	*n = 98;
+	int c;
+
+	c = *a;
+	*a = *b;
+	*b = c;
 }
