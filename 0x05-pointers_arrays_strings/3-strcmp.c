@@ -23,12 +23,12 @@ int _strcmp(char *s1, char *s2)
 		val_2 += s2[index];
 	}
 
-	if (val_1 < val_2)
-	{
-		return (-15);
-	} else if (val_1 > val_2)
+	if (val_1 > val_2)
 	{
 		return (15);
+	} else if (val_1 < val_2)
+	{
+		return (-15);
 	}
 
 	return (0);
