@@ -1,5 +1,5 @@
 #include "holberton.h"
-
+#include <stdio.h>
 /**
 * _strncpy - Copies strings.
 * @dest: String to be overwritten.
@@ -16,6 +16,9 @@ char *_strncpy(char *dest, char *src, int n)
 	{
 		dest[count] = src[count];
 	}
-
+	if (src[count] == '\0')
+	{
+		dest[count] = '\0';
+	}
 	return (dest);
 }
