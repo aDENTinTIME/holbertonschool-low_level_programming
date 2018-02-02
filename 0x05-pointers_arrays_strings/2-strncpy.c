@@ -1,5 +1,5 @@
 #include "holberton.h"
-#include <stdio.h>
+
 /**
 * _strncpy - Copies strings.
 * @dest: String to be overwritten.
