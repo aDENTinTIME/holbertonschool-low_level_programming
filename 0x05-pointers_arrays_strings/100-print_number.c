@@ -12,9 +12,6 @@ void print_number(int n)
 		_putchar ('-');
 	}
 
-	if (n > 99999)
-		_putchar (n % 1000000 / 100000 + '0');
- 
 	if (n > 9999)
 		_putchar (n % 100000 / 10000 + '0');
 
