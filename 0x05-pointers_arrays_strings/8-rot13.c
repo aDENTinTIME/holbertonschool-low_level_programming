@@ -1,20 +1,25 @@
 #include "holberton.h"
 
 /**
-* string_toupper - Makes every letter uppercase.
+* rot13 - Converts string to rot13.
 * @src: Source string.
-* Return: Uppercase string.
+* Return: rot13 string.
 */
 
 char *rot13(char *src)
 {
-	int index;
+	int i;
 
-	for (index = 0; src[index] != '\0'; index++)
+	for (i = 0; src[i] != '\0'; i++)
 	{
-		if (src[index] >= 97 && src[index] <= 122)
-			src[index] -= 32;
+		if      (src[i] >= 110 && src[i] <= 122)
+			src[i] -= 13;
+		else if (src[i] >= 97 && src[i] <= 109)
+			src[i] += 13;
+		else if (src[i] >= 78 && src[i] <= 90)
+			src[i] -= 13;
+		else if (src[i] >= 65 && src[i] <= 77)
+			src[i] += 13;
 	}
-
 	return (src);
 }
