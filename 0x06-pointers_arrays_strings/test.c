@@ -1,14 +1,19 @@
+#include "holberton.h"
 #include <stdio.h>
 #include <string.h>
 
+/**
+ * main - check the code for Holberton School students.
+ *
+ * Return: Always 0.
+ */
 int main(void)
 {
-    char *s = "hel looldwo";
-    char *f = "dlewho";
-    unsigned int n;
+    char *s = "hello, world po";
+    char *f = "world";
+    char *t;
 
-    n = strspn(s, f);
-    printf("%u\n", n);
-
-	return(0);
+    t = strpbrk(s, f);
+    printf("%s\n", t);
+    return (0);
 }
