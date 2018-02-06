@@ -4,8 +4,8 @@
 * _strspn - Returns the number of bytes in the initial
 * segment of s which consist only of bytes from accept.
 * @s: Source string.
-* @c: Character to look for.
-* Return: Modified pointer.
+* @accept: Characters to look for.
+* Return: number of bytes.
 */
 
 unsigned int _strspn(char *s, char *accept)
