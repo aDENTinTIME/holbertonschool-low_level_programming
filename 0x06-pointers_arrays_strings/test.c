@@ -10,7 +10,7 @@
 int main(void)
 {
     char *s = "hello, worldhi eh";
-    char *f = "world";
+    char *f = "worl";
     char *t;
 
     t = strstr(s, f);
