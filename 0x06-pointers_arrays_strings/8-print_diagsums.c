@@ -17,10 +17,11 @@ void print_diagsums(int *a, int size)
 	ii = 0;
 	value1 = 0;
 
-	printf("%d\n", *a[0][0]);
+	printf("##%d##\n", *(a));
 
 	while (i < size)
 	{
+		value1 = *(a + ((i * ii) - 1));
 		i++;
 		ii++;
 	}
