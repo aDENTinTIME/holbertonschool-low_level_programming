@@ -11,20 +11,30 @@
 
 void print_diagsums(int *a, int size)
 {
-	int val1, val2, i;
+	int value1, value2, i, up, down;
 
-	val1 = 0;
-	val2 = 0;
+	up = size + 1;
+	down = size - 1;
+	i = 0;
+	value1 = *(a + 0);
+	value2 = *(a + size * size);
 
-	for (i = 0; i < size * size; i += size + 1)
+	while (i < size)
 	{
-		val1 += a[i];
+		value1 += *a;
+		a += up;
+		i++;
 	}
 
-	for (i = size - 1; i < size * size - 1; i += size - 1)
+	i = size;
+	a += 
+
+	while (i > 0)
 	{
-		val2 += a[i];
+		value2 -= *a;
+		a -= down;
+		i--;
 	}
 
-	printf("%d, %d\n", val1, val2);
+	printf("%d, %d\n", value1, value2);
 }
