@@ -2,11 +2,10 @@
 #include <stdio.h>
 
 /**
-* _strstr - function finds the first occurrence
-* of the substring needle in the string haystack.
-* @haystack: Source string.
-* @needle: String to look for.
-* Return: Remaining string from point character occurs.
+* print_diagsums - prints the sum of the two
+* diagonals of a square matrix of integers.
+* @a: Source array.
+* @size: Size of array.
 */
 
 void print_diagsums(int *a, int size)
