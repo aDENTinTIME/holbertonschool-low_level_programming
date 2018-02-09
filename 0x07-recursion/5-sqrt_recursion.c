@@ -9,6 +9,9 @@
 
 int find_root(int n, int mul)
 {
+	if (n == 1)
+		return (1);
+
 	if (n < 1 || mul > n / 2)
 	{
 		return (-1);
