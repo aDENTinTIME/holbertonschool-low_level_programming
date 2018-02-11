@@ -12,11 +12,11 @@ int _isdigit(int c)
 {
 	if (c >= '0' && c <= '9')
 	{
-		return (1);
+		return (0);
 	}
 	else
 	{
-		return (0);
+		return (1);
 	}
 }
 
@@ -32,7 +32,7 @@ int char_check(char *s)
 
 	for (i = 0; s[i] != '\0'; i++)
 	{
-		if (_isdigit(s[i]) == 0)
+		if (_isdigit(s[i]) == 1)
 			return (1);
 	}
 
