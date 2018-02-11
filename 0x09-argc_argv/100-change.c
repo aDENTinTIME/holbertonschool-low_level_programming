@@ -28,23 +28,23 @@ int main(int argc, char *argv[])
 		printf("0\n");
 		return (0);
 	}
-	for (;num >= 25; i++)
+	for (; num >= 25; i++)
 	{
 		num -= 25;
 	}
-	for (;num >= 10; i++)
+	for (; num >= 10; i++)
 	{
 		num -= 10;
 	}
-	for (;num >= 5; i++)
+	for (; num >= 5; i++)
 	{
 		num -= 5;
 	}
-	for (;num >= 2; i++)
+	for (; num >= 2; i++)
 	{
 		num -= 2;
 	}
-	for (;num >= 1; i++)
+	for (; num >= 1; i++)
 	{
 		num -= 1;
 	}
