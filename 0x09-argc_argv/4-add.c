@@ -3,6 +3,24 @@
 #include <stdlib.h>
 
 /**
+* _isdigit - Returns weather character is a digit or not.
+* @c: charater fed in.
+* Return: 1 or 0
+*/
+
+int _isdigit(int c)
+{
+	if (c >= '0' && c <= '9')
+	{
+		return (1);
+	}
+	else
+	{
+		return (0);
+	}
+}
+
+/**
 * char_check - Checks every char of input string to see if it's an int.
 * @s: Passed in string.
 * Return: 1 if char is found; 0 if only ints.
