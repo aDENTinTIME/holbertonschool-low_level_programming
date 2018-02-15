@@ -1,6 +1,7 @@
-#include "holberton.h"
 #include <stdio.h>
 #include <stdlib.h>
+
+int **alloc_grid(int, int);
 
 /**
  * print_grid - prints a grid of integers
@@ -12,21 +13,21 @@
  */
 void print_grid(int **grid, int width, int height)
 {
-    int w;
-    int h;
+	int w;
+	int h;
 
-    h = 0;
-    while (h < height)
-    {
-        w = 0;
-        while (w < width)
-        {
-            printf("%d ", grid[h][w]);
-            w++;
-        }
-        printf("\n");
-        h++;
-    }   
+	h = 0;
+	while (h < height)
+	{
+		w = 0;
+		while (w < width)
+		{
+			printf("%d ", grid[h][w]);
+			w++;
+		}
+		printf("\n");
+		h++;
+	}
 }
 
 /**
@@ -36,17 +37,21 @@ void print_grid(int **grid, int width, int height)
  */
 int main(void)
 {
-    int **grid;
+	int **grid;
+	int h;
+	int w;
 
-    grid = alloc_grid(6, 4);
-    if (grid == NULL)
-    {
-        return (1);
-    }
-    print_grid(grid, 6, 4);
-    printf("\n");
-    grid[0][3] = 98;
-    grid[3][4] = 402;
-    print_grid(grid, 6, 4);
-    return (0);
+	h = 32;
+	w = 48;
+	grid = alloc_grid(w, h);
+	if (grid == NULL)
+	{
+		return (1);
+	}
+	print_grid(grid, w, h);
+	printf("\n");
+	grid[23][14] = 98;
+	grid[19][43] = 402;
+	print_grid(grid, w, h);
+	return (0);
 }
