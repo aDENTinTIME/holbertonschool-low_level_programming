@@ -3,26 +3,30 @@
 #include <stdlib.h>
 
 /**
-* _strdup - NOT WORKING
-* @str: NOT WORKING
+* _strdup - returns a pointer to a newly allocated space in memory,
+* which contains a copy of the string given as a parameter.
+* @str: Passed in string.
 * Return: Pointer to string.
 */
 
 char *_strdup(char *str)
 {
 	char *s;
-	int i;
+	int i, ii;
+
+	if (str == NULL)
+		return (NULL);
 
 	for (i = 0; str[i] != '\0'; i++)
 	{
 	}
 
-	s = (char *) malloc(i * sizeof(char));
+	s = malloc(i * sizeof(char) + 1);
 
-	s = str;
-
-	if (str == NULL || s == NULL)
-		return (NULL);
+	for (ii = 0; ii < i + 1; ii++)
+	{
+		s[ii] = str[ii];
+	}
 
 	return (s);
 }
