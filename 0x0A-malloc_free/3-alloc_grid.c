@@ -3,31 +3,32 @@
 #include <stdlib.h>
 
 /**
-* _strdup - NOT WORKING
-* @str: NOT WORKING
-* Return: Pointer to string.
+* alloc_grid - returns a pointer to a 2 dimensional array of integers.
+* @width: width of array.
+* @height: height of array.
+* Return: Pointer to 2D array.
 */
 
 int **alloc_grid(int width, int height)
 {
 	int **grid;
-	int i, ii;
+	int i;
 
 	if (width == 0 || height == 0)
 		return (NULL);
 
-	grid = malloc(width * height * sizeof(int *));
-	*grid = malloc(width * sizeof(int));
-
+	grid = malloc(height * sizeof(int *));
 	for (i = 0; i < height; i++)
 	{
-		for (ii = 0; ii < width; ii++)
-		{
-			grid[i][ii] = 0;
-		}
+		*(grid + i) = malloc(width * sizeof(int));
 	}
 
-	if (i == height && ii == width)
+	for (i = 0; i < height * width; i++)
+	{
+		*(*grid + i) = 0;
+	}
+
+	if (i == height * width)
 	{
 		return (grid);
 	}
@@ -35,4 +36,5 @@ int **alloc_grid(int width, int height)
 	{
 		return (NULL);
 	}
+	return (0);
 }
