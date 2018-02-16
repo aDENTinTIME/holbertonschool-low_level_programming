@@ -10,15 +10,9 @@
  *
  * Return: Nothing.
  */
-void simple_print_buffer(char *buffer, unsigned int size)
+void simple_print_buffer(int *buffer, unsigned int size)
 {
     unsigned int i;
-
-	if (buffer == NULL)
-	{
-		printf("dodo!");
-		return;
-	}
 
     i = 0;
     while (i < size)
@@ -44,12 +38,10 @@ void simple_print_buffer(char *buffer, unsigned int size)
  */
 int main(void)
 {
-    char *a;
+    int *a;
 
-    a = _calloc(0, sizeof(int));
-printf("1\n");
-
-    simple_print_buffer(a, 98);
+    a = array_range(0, 10);
+    simple_print_buffer(a, 11);
     free(a);
     return (0);
 }
