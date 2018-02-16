@@ -15,7 +15,7 @@ int len(char *s)
 	for (i = 0; s[i] != '\0'; i++)
 	{
 	}
-
+	printf("%d",i);
 	return (i);
 }
 
@@ -38,7 +38,7 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 	if (s2 == NULL)
 		s2 = "";
 
-	ptr = malloc(len(s1) * len(s2) * sizeof(char));
+	ptr = malloc(len(s1) * len(s2) * sizeof(char) + 1);
 
 	if (ptr == NULL)
 	{
