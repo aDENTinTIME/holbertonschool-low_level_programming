@@ -3,10 +3,10 @@
 #include <stdlib.h>
 
 /**
-* array_range -
-* @min:
-* @max:
-* Return:
+* array_range - Creates an array of integers.
+* @min: Min number.
+* @max: Max number.
+* Return: Pointer to array.
 */
 
 int *array_range(int min, int max)
@@ -17,14 +17,14 @@ int *array_range(int min, int max)
 	if (min > max)
 		return (NULL);
 
-	ptr = malloc((max - min) * sizeof(int));
+	ptr = malloc((max - min) * sizeof(int) + 1);
 
 	if (ptr == NULL)
 		return (NULL);
 
 	for (i = 0; min <= max;)
 	{
-		ptr [i] = min;
+		ptr[i] = min;
 		i++;
 		min++;
 	}
