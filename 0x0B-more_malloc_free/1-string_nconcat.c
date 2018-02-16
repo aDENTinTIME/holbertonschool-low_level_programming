@@ -8,14 +8,14 @@
 * Return: Length as number.
 */
 
-int len(char *s)
+unsigned int len(char *s)
 {
 	int i;
 
 	for (i = 0; s[i] != '\0'; i++)
 	{
 	}
-	printf("%d",i);
+
 	return (i);
 }
 
@@ -38,7 +38,10 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 	if (s2 == NULL)
 		s2 = "";
 
-	ptr = malloc(len(s1) * len(s2) * sizeof(char) + 1);
+	if (n > len(s2))
+		n = len(s2);
+
+	ptr = malloc((len(s1) + n) * sizeof(char) + 1);
 
 	if (ptr == NULL)
 	{
@@ -50,7 +53,7 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 		ptr[i] = s1[i];
 	}
 
-	for (ii = 0; ii < n && s2[ii] != '\0'; ii++)
+	for (ii = 0; ii < n; ii++)
 	{
 		ptr[i] = s2[ii];
 		i++;
