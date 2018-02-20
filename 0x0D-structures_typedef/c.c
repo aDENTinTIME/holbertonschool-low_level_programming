@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include "dog.h"
 
 /**
 * main - Prints file that called it's name.
