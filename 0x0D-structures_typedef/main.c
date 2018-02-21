@@ -1,4 +1,3 @@
-#include <stdlib.h>
 #include <stdio.h>
 #include "dog.h"
 
@@ -11,11 +10,8 @@ int main(void)
 {
     dog_t *my_dog;
 
-    my_dog = new_dog("Django", 3.5, "Jay");
+    my_dog = new_dog("Ghost", 4.75, "Jon Snow");
     printf("My name is %s, and I am %.1f :) - Woof!\n", my_dog->name, my_dog->age);
-	free(my_dog->age);
-	free(my_dog->name);
-	free(my_dog->owner);
-	free(my_dog);
     return (0);
 }
+

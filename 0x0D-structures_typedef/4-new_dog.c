@@ -18,6 +18,8 @@ char *cpy(char *dest, char *src)
 		dest[i] = src[i];
 	}
 
+	dest[i] = '\0';
+
 	return (dest);
 }
 
