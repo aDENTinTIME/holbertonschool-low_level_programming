@@ -3,6 +3,25 @@
 #include "dog.h"
 
 /**
+* cpy - Copies contents of one string to another.
+* @dest: Destination string.
+* @src: Source string.
+* Return: Copied string.
+*/
+
+char *cpy(char *dest, char *src)
+{
+	int i;
+
+	for (i = 0; src[i] != '\0'; i++)
+	{
+		dest[i] = src[i];
+	}
+
+	return (dest);
+}
+
+/**
 * len - Measures length of string.
 * @s: Passed in string.
 * Return: Integer with value of length of string.
@@ -33,9 +52,6 @@ dog_t *new_dog(char *name, float age, char *owner)
 	dog_t *pup;
 	char *n_name, *n_owner;
 
-	(void)n_name;
-	(void)n_owner;
-
 	if (name == NULL)
 		return (NULL);
 	if (owner == NULL)
@@ -62,8 +78,10 @@ dog_t *new_dog(char *name, float age, char *owner)
 		return (NULL);
 	}
 
-	n_name = name;
-	n_owner = owner;
+	n_name = malloc(sizeof(char) * len(name) + 1);
+	n_owner = malloc(sizeof(char) * len(owner) + 1);
+	cpy(n_name, name);
+	cpy(n_owner, owner);
 	pup->name = name;
 	pup->owner = owner;
 	pup->age = age;
