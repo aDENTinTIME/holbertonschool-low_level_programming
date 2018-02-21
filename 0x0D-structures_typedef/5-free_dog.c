@@ -3,12 +3,15 @@
 #include "dog.h"
 
 /**
-* print_dog - Prints struct of type dog.
+* free_dog - Frees dog vars and struct.
 * @d: dog struct.
 */
 
 void free_dog(dog_t *d)
 {
+	if (d == NULL)
+		return;
+
 	free(d->name);
 	free(d->owner);
 	free(d);
