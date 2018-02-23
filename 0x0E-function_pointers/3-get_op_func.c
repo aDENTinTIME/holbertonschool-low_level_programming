@@ -3,11 +3,11 @@
 #include "3-calc.h"
 
 /**
-* 
-* @
-* @
-* @
-* Return:
+* get_op_func - selects the correct function
+* to perform the operation asked by the user.
+* @s: String containing operator character.
+* Return: Corresponding function to input symbol,
+* or NULL if it doesn't exist.
 */
 int (*get_op_func(char *s))(int, int)
 {
@@ -22,10 +22,12 @@ int (*get_op_func(char *s))(int, int)
 
 	int i;
 
-	while (i < 6)
+	i = 0;
+
+	while (i < 5)
 	{
-		if (*s == ops->op[i])
-			return (ops->f);
+		if (*s == *ops[i].op)
+			return (ops[i].f);
 		i++;
 	}
 

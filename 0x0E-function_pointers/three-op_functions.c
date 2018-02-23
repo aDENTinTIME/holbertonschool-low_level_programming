@@ -3,61 +3,81 @@
 #include "3-calc.h"
 
 /**
-* op_add - Adds.
+* 
 * @a: First number passed in.
 * @b: Second number passed in.
-* Return: Result.
+* Return: 
 */
 
 int op_add(int a, int b)
 {
-	return (a + b);
+	int total;
+
+	total = a + b;
+	printf("%d\n", total);
+	return (total);
 }
 
 /**
-* op_sub - Subtracts.
+* 
 * @a: First number passed in.
 * @b: Second number passed in.
-* Return: Result.
+* Return: 
 */
 
 int op_sub(int a, int b)
 {
-	return (a - b);
+	int total;
+
+	total = a - b;
+	printf("%d\n", total);
+	return (total);
 }
 
 /**
-* op_mul - Multiplies.
+* 
 * @a: First number passed in.
 * @b: Second number passed in.
-* Return: Result.
+* Return: 
 */
 
 int op_mul(int a, int b)
 {
-	return (a * b);
+	int total;
+
+	total = a * b;
+	printf("%d\n", total);
+	return (total);
 }
 
 /**
-* op_div - Divides.
+* 
 * @a: First number passed in.
 * @b: Second number passed in.
-* Return: Result.
+* Return: 
 */
 
 int op_div(int a, int b)
 {
-	return (a / b);
+	int total;
+
+	total = a / b;
+	printf("%d\n", total);
+	return (total);
 }
 
 /**
-* op_mod - Modulus.
+* 
 * @a: First number passed in.
 * @b: Second number passed in.
-* Return: Result
+* Return: 
 */
 
 int op_mod(int a, int b)
 {
-	return (a % b);
+	int total;
+
+	total = a % b;
+	printf("%d\n", total);
+	return (total);
 }
