@@ -6,7 +6,7 @@
 /**
 * sum_them_all - Adds all numbers passed to it.
 * @n: Variable number of arguments.
-* Return: sum.
+* Return: 0 if n is 0, and sum if function runs.
 */
 
 int sum_them_all(const unsigned int n, ...)
@@ -18,7 +18,7 @@ int sum_them_all(const unsigned int n, ...)
 	sum = 0;
 
 	if (n == 0)
-		return (sum);
+		return (0);
 
 	va_start(kiwi, n);
 
