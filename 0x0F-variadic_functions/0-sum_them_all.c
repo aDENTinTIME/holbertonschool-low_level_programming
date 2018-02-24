@@ -6,7 +6,7 @@
 /**
 * sum_them_all - Adds all numbers passed to it.
 * @n: Variable number of arguments.
-* Return: Sum.
+* Return: Sum OR 0.
 */
 
 int sum_them_all(const unsigned int n, ...)
