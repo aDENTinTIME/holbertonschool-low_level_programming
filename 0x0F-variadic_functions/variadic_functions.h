@@ -3,6 +3,12 @@
 
 #include <stdarg.h>
 
+/**
+* struct format - Struct format_t.
+* @sym: symbol.
+* @f: function.
+*/
+
 typedef struct format
 {
 	char *sym;
