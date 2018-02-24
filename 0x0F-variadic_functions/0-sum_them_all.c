@@ -4,9 +4,9 @@
 #include "variadic_functions.h"
 
 /**
-* sum_them_all - 
-* @n: 
-* Return: 
+* sum_them_all - Adds all numbers passed to it.
+* @n: Variable number of arguments.
+* Return: Sum.
 */
 
 int sum_them_all(const unsigned int n, ...)

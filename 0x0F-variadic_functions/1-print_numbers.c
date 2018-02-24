@@ -4,9 +4,9 @@
 #include "variadic_functions.h"
 
 /**
-* sum_them_all - 
-* @n: 
-* Return: 
+* print_numbers - Prints numbers passed to it.
+* @separator: Separator to print between numbers.
+* @n: Numbers.
 */
 
 void print_numbers(const char *separator, const unsigned int n, ...)

@@ -4,21 +4,21 @@
 #include "variadic_functions.h"
 
 /**
-* print_strings - Prints strings passed to it.
-* @separator: Separator to print between strings.
-* @n: Strings passed in.
+* sum_them_all - 
+* @n: 
+* Return: 
 */
 
-void print_strings(const char *separator, const unsigned int n, ...)
+int print_strings(const char *separator, const unsigned int n, ...)
 {
 	va_list kiwi;
 	unsigned int i;
 	char *ptr;
 
-	if (n == 0)
-		return;
-
 	va_start(kiwi, n);
+
+	if (va_arg(kiwi, char *) == NULL)
+		exit(1);
 
 	for (i = 0; i < n; i++)
 	{
@@ -40,4 +40,6 @@ void print_strings(const char *separator, const unsigned int n, ...)
 	printf("\n");
 
 	va_end(kiwi);
+
+	return (2);
 }
