@@ -5,67 +5,94 @@
 
 
 /**
-* sum_them_all - 
-* @n: 
-* Return: 
+* print_all - Function that will print anything given to it.
+* @format: Variables passed in.
 */
 
 void print_all(const char * const format, ...)
 {
 	va_list ap;
 	int i, ii;
-	const char *pass_f;
+	char *sep;
 
 	format_t hold_f[] = {
 		{"c", print_char},
 		{"i", print_int},
 		{"f", print_float},
-		{"s", print_string}
+		{"s", print_string},
+		{NULL, NULL}
 	};
 
+	sep = "";
 
 	va_start(ap, format);
 
-	pass_f = format;
-
 	i = 0;
-	while (pass_f[i] != '\0')
+	while (format != NULL && format[i] != '\0')
 	{
 		ii = 0;
-		while (ii < 4)
+		while (hold_f[ii].sym != NULL)
 		{
-			if (pass_f[i] == hold_f[ii].sym)
+			if (format[i] == *hold_f[ii].sym)
 			{
-				hold_f[ii].f(va_arg(ap, int));
+				printf("%s", sep);
+				hold_f[ii].f(ap);
+				sep = ", ";
 			}
 			ii++;
 		}
 		i++;
 	}
 
-	va_end(ap);
-
 	printf("\n");
 
-	return;
+	va_end(ap);
 }
+
+/**
+* print_char - Prints char.
+* @c: Passed in char.
+*/
 
 void print_char(va_list c)
 {
-	printf("%d", va_arg(c, int));
+	printf("%c", va_arg(c, int));
 }
 
-void print_string(va_list i)
+/**
+* print_int - Prints int.
+* @i: Passed in string.
+*/
+
+void print_int(va_list i)
 {
 	printf("%d", va_arg(i, int));
 }
 
-void print_int(va_list f)
+/**
+* print_float - Prints float
+* @f: Passed in float.
+*/
+
+void print_float(va_list f)
 {
 	printf("%f", va_arg(f, double));
 }
 
-void print_float(va_list s)
+/**
+* print_string - Prints string.
+* @s: Passed in string.
+*/
+
+void print_string(va_list s)
 {
-	printf("%s", va_arg(s, char *));
+	char *ptr = va_arg(s, char *);
+
+	if (ptr == NULL)
+	{
+		printf("(nil)");
+		return;
+	}
+
+	printf("%s", ptr);
 }
