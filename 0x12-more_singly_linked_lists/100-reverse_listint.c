@@ -1,7 +1,7 @@
 #include "lists.h"
 
 /**
-* reverse_listint - 
+* reverse_listint - Reverses a list of structs.
 * @head: Address of pointer to struct of type listint_t.
 *
 * Return: Address of new first node.
