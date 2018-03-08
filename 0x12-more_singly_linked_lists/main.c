@@ -13,7 +13,7 @@ int main(void)
     listint_t *head;
 
     head = NULL;
-    add_nodeint_end(&head, 1024);
+    add_nodeint_end(&head, 402);
     print_listint(head);
     reverse_listint(&head);
     print_listint(head);    
