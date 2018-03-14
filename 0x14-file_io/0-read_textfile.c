@@ -1,10 +1,13 @@
 #include "holberton.h"
 
 /**
-* binary_to_uint - Converts a binary number to an unsigned int.
-* @b: String of chars of 0 and 1s.
+* read_textfile - Prints up to a certain
+* number of charectars to the standard output.
 *
-* Return: Base 10 unsigned int of value of binary.
+* @filename: Pointer to string of text to be printed.
+* @letters: Max number of charectars to print.
+*
+* Return: Number of charecters printed.
 */
 
 ssize_t read_textfile(const char *filename, size_t letters)
