@@ -28,7 +28,7 @@ int main(int ac, char **av)
 	while ((length = read(file_from, buff, 1024)))
 	{
 		if ((write(file_to, buff, length)) == -1)
-			ERROR2(98, "Error: Can't read from file", av[1]);
+			ERROR2(99, "Error: Can't write to", av[2]);
 	}
 
 	if (length == -1)
