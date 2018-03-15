@@ -1,7 +1,9 @@
 #include "holberton.h"
 
-int main(void)
+void main(void)
 {
-	write(0, "hi\n", 3);
-	return (0);
+	while (-1)
+	{
+		write(0, "hi\n", 3);
+	}
 }
