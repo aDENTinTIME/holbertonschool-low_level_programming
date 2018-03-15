@@ -1,51 +1,38 @@
 #include "holberton.h"
 
-int len(char *s)
-{
-	int i = 0;
-
-	while (s[i++])
-
-	return (i - 1)
-}
-
-
 /**
-* copy_file
+* main - Copies the contents of one file to a new file.
 *
-* @filename: Pointer to string of text for the files name.
-* @text_content: Pointer to string of text to put in file.
-*
-* Return: 1 on success or -1 on failure.
+* @ac: Number of arguments passed to program.
+* @av: Array of variables, names of file to read from, and new file.
 */
 
-int copy_file(int ac, char *av[])
+int main(int ac, char **av)
 {
-	int fd, length;
+	char buff[1024];
+	int file_from, file_to, length;
 
 	if (ac != 3)
+		ERROR1(97, "Usage: cp file_from file_to");
+
+	if ((file_from = open(av[1], O_RDONLY)) == -1)
+		ERROR2(98, "Error: Can't read from file", av[1]);
+
+	if ((file_to = open(av[2], O_RDWR | O_CREAT | O_TRUNC, 00664)) == -1)
+		ERROR2(99, "Error: Can't write to", av[2]);
+
+	while ((length = read(file_from, buff, 1024)))
 	{
-		write(STDERR_FILENO, "Usage: cp file_from file_to\n", 28);
-		exit(97);
+		if ((write(file_to, buff, length)) == -1)
+			ERROR2(98, "Error: Can't read from file", av[1]);
 	}
-// clear out junk, add comment description of 'len'
 
-	length = 0;
+	if (length == -1)
+		ERROR2(98, "Error: Can't read from file", av[1]);
+	if (close(file_from) == -1)
+		ERROR3(100, "Error: Can't close fd", file_from);
+	if (close(file_to) == -1)
+		ERROR3(100, "Error: Can't close fd", file_to);
 
-//	if (filename == NULL)
-//		return (-1);
-
-//	if (text_content == NULL)
-//		text_content = "";
-
-	fd = open(av[1], O_RDWR | O_CREAT, 00600);
-	if (fd == -1)
-		return (-1);
-
-	if ((write(fd, av[2], (length - 1))) == -1)
-		return (-1);
-
-	close(fd);
-
-	return (1);
+	return (0);
 }
