@@ -12,7 +12,7 @@
 int main(int ac, char **av)
 {
 	char buff[1024];
-	int file_from, file_to, length_read;
+	int file_from, file_to, length;
 
 	if (ac != 3)
 		ERROR1(97, "Usage: cp file_from file_to");
@@ -21,17 +21,17 @@ int main(int ac, char **av)
 	if (file_from == -1)
 		ERROR2(98, "Error: Can't read from file", av[1]);
 
-	file_to = open(av[2], O_RDWR | O_CREAT | O_TRUNC, 00664);
+	file_to = open(av[2], O_WRONLY | O_CREAT | O_TRUNC, 00664);
 	if (file_to == -1)
 		ERROR2(99, "Error: Can't write to", av[2]);
 
-	while ((length_read = read(file_from, buff, 1024)))
+	while ((length = read(file_from, buff, 1024)))
 	{
-		if ((write(file_to, buff, length_read)) == -1)
+		if ((write(file_to, buff, length)) == -1)
 			ERROR2(98, "Error: Can't read from file", av[1]);
 	}
 
-	if (length_read == -1)
+	if (length == -1)
 		ERROR2(98, "Error: Can't read from file", av[1]);
 	if (close(file_from) == -1)
 		ERROR3(100, "Error: Can't close fd", file_from);
