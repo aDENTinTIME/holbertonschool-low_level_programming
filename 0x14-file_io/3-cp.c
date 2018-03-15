@@ -5,6 +5,8 @@
 *
 * @ac: Number of arguments passed to program.
 * @av: Array of variables, names of file to read from, and new file.
+*
+* Return: 0 on success. Exit on error.
 */
 
 int main(int ac, char **av)
@@ -15,10 +17,12 @@ int main(int ac, char **av)
 	if (ac != 3)
 		ERROR1(97, "Usage: cp file_from file_to");
 
-	if ((file_from = open(av[1], O_RDONLY)) == -1)
+	file_from = open(av[1], O_RDONLY);
+	if (file_from == -1)
 		ERROR2(98, "Error: Can't read from file", av[1]);
 
-	if ((file_to = open(av[2], O_RDWR | O_CREAT | O_TRUNC, 00664)) == -1)
+	file_to = open(av[2], O_RDWR | O_CREAT | O_TRUNC, 00664);
+	if (file_to == -1)
 		ERROR2(99, "Error: Can't write to", av[2]);
 
 	while ((length = read(file_from, buff, 1024)))
