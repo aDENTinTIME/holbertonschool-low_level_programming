@@ -1,11 +1,12 @@
 #include "lists.h"
 
 /**
- * name
+ * insert_dnodeint_at_index - Inserts a new node at a given position.
  *
- * @head: Head of list.
+ * @h: Head of list.
+ * @idx: Position in linked list to travle to.
  * @n: Number to be stored in node.
- * Return: Pointer to new node.
+ * Return: New node at index or NULL if index out of range.
  */
 
 dlistint_t *insert_dnodeint_at_index(dlistint_t **h, unsigned int idx, int n)
@@ -16,14 +17,11 @@ dlistint_t *insert_dnodeint_at_index(dlistint_t **h, unsigned int idx, int n)
 	slow = *h;
 	fast = *h;
 	i = idx;
-
 	if (!h)
 		return (NULL);
-
 	new = malloc(sizeof(dlistint_t));
 	if (!new)
 		return (NULL);
-
 	if (idx == 0)
 	{
 		new->n = n;
@@ -36,7 +34,6 @@ dlistint_t *insert_dnodeint_at_index(dlistint_t **h, unsigned int idx, int n)
 	}
 	if (fast == NULL)
 		return (NULL);
-
 	fast = fast->next;
 	while (i--)
 	{
@@ -45,18 +42,13 @@ dlistint_t *insert_dnodeint_at_index(dlistint_t **h, unsigned int idx, int n)
 		fast = fast->next;
 		slow = slow->next;
 	}
-
 	fast = fast->prev;
 	slow = slow->prev;
-
 	new->n = n;
 	new->next = fast;
 	new->prev = slow;
-
 	if (new->next != NULL)
 		new->next->prev = new;
-
 	slow->next = new;
-
 	return (new);
 }
