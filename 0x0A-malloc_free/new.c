@@ -8,12 +8,9 @@
  */
 int main(void)
 {
-    int *tab;
-
-    tab = malloc(sizeof(*tab) * 3);
-    tab[0] = 98;
-    tab[1] = -1024;
-    tab[2] = '\0';
-    printf("%s\n", tab);
+    while (1)
+    {
+        malloc(sizeof(char) * 1024);
+    }
     return (0);
 }
