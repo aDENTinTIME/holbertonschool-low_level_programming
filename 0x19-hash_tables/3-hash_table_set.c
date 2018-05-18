@@ -11,26 +11,43 @@
 int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 {
 	unsigned long int index;
-	hash_node_t *new_node;
+	hash_node_t *new_node, *ptr;
 
 	if (!value || !ht || !key || *key == '\0')
 		return (0);
+
+	index = key_index((unsigned char *)key, ht->size);
+
+	ptr = ht->array[index];
+	while (ptr)
+	{
+		if (!strcmp(ptr->key, key))
+		{
+			free(ptr->value);
+			ptr->value = strdup(value);
+			return (1);
+		}
+		ptr = ptr->next;
+	}
+	ptr = ht->array[index];
 
 	new_node = malloc(sizeof(hash_node_t));
 	if (!new_node)
 		return (0);
 
-	index = key_index((unsigned char *)key, ht->size);
+	new_node->key = strdup(key);
+	if (!(new_node->key))
+		return (0);
 
-	new_node->key = (char *)key;
-	new_node->value = (char *)value;
+	new_node->value = strdup(value);
+	if (!(new_node->value))
+		return (0);
+
+	new_node->next = NULL;
+	if (ptr)
+		new_node->next = ptr;
 
 	ht->array[index] = new_node;
-
-/*
-I'm doing something wrong probably,
-need to make this a LINKED list, just not sure
-where to link them, front, back, ordered???
-*/
+	
 	return (1);
 }
