@@ -1,0 +1,15 @@
+# 2-Makefile
+
+CC = gcc
+SRC = holberton.c main.c
+OBJ = holberton.o main.o
+NAME = holberton
+
+all: $(OBJ)
+	$(CC) $(OBJ) -o $(NAME)
+
+main.o: main.c
+	$(CC) -c main.c
+
+holberton.o: holberton.c
+	$(CC) -c holberton.c
